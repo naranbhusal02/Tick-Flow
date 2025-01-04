@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Activity Tracker</h1>
+        <form id="activity-form">
+            <input type="text" id="activity-input" placeholder="Enter activity name" required>
+            <button type="submit">Add Activity</button>
+        </form>
+        <div id="activity-list">
+            <h2>Activities</h2>
+            <ul id="activities"></ul>
+        </div>
+        <div id="weekly-report">
+            <h2>Weekly Report</h2>
+            <p>Total Activities: <span id="total-activities">0</span></p>
+            <p>Completed Activities: <span id="completed-activities">0</span></p>
+            <p>Completion Rate: <span id="completion-rate">0</span>%</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
