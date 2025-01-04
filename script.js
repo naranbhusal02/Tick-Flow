@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Animate elements on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.developer-card, .project-card');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (elementTop < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Initial check on page load
+
+    // Parallax effect for hero section
+    const heroContent = document.querySelector('.hero-content');
+    const heroImage = document.querySelector('.hero-image');
+
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        heroContent.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+        heroImage.style.transform = `translateY(${scrollPosition * 0.7}px)`;
+    });
+
+    // Activity Tracker Functionality
     const activityForm = document.getElementById('activity-form');
     const activityInput = document.getElementById('activity-input');
     const activitiesList = document.getElementById('activities');
@@ -57,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         totalActivities.textContent = total;
         completedActivities.textContent = completed;
-        completionRate.textContent = rate;
+        completionRate.textContent = rate + '%';
     }
 
     activityForm.addEventListener('submit', (e) => {
@@ -70,5 +107,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderActivities();
+
+    // Animate activity tracker elements on scroll
+    const animateActivityTracker = () => {
+        const elements = document.querySelectorAll('.activity-container, .report-item');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            if (elementTop < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateActivityTracker);
+    animateActivityTracker(); // Initial check on page load
 });
 
