@@ -3,27 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity Tracker</title>
+    <title>Amazing Developer Showcase & Activity Tracker</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Activity Tracker</h1>
-        <form id="activity-form">
-            <input type="text" id="activity-input" placeholder="Enter activity name" required>
-            <button type="submit">Add Activity</button>
-        </form>
-        <div id="activity-list">
-            <h2>Activities</h2>
-            <ul id="activities"></ul>
+    <header>
+        
+        <div class="logo">Tick-Flow</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#activity-tracker">Activity Tracker</a></li>
+                <li><a href="#developer">Developer</a></li>
+                <li><a href="https://naranbhusal02.me">Contact</a></li>
+            </ul>
+            
+        </nav>
+        
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Tick-Flow</h1>
+                <p>Project developed to help you track your weekly activity.</p>
+                <a href="#developer" class="cta-button">Meet the Developer</a>
+            </div>
+            <div class="hero-image">
+                <img src="/Images/QGPDfvQpQySKzOxnyMIlrg.jpg" alt="Hero Image">
+            </div>
+        </section>
+
+
+        <!--Activity-->
+        <section id="activity-tracker" class="activity-tracker">
+            <h2>Activity Tracker</h2>
+            <div class="activity-container">
+                <form id="activity-form" class="add-activity">
+                    <input type="text" id="activity-input" placeholder="Enter activity name" required>
+                    <button type="submit">Add Activity</button>
+                </form>
+                <div id="activity-list" class="activity-list">
+                    <h3>Your Activities</h3>
+                    <ul id="activities"></ul>
+                </div>
+                <div id="weekly-report" class="weekly-report">
+                    <h3>Weekly Report</h3>
+                    <div class="report-grid">
+                        <div class="report-item">
+                            <span class="report-label">Total Activities</span>
+                            <span id="total-activities" class="report-value">0</span>
+                        </div>
+                        <div class="report-item">
+                            <span class="report-label">Completed Activities</span>
+                            <span id="completed-activities" class="report-value">0</span>
+                        </div>
+                        <div class="report-item">
+                            <span class="report-label">Completion Rate</span>
+                            <span id="completion-rate" class="report-value">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Activity Tracker-->
+
+
+        <section id="developer" class="developer">
+            <div class="developer-card">
+                <div class="developer-image">
+                    <img src="/Images/1726238646946.png" alt="Jane Doe">
+                </div>
+                <div class="developer-info">
+                    <h2>Narayan Bhusal</h2>
+                    <p class="title">Frontend UI/UX Developer</p>
+                    <p class="bio">@naranbhusal02 is a passionate frontend developer with 2+ years of experience in creating stunning web applications.</p>
+                    <div class="skills">
+                        <span>Graphics Design</span>
+                        <span>UI Design</span>
+                        <span>Content Writing</span>
+                        <span>Basic Video Editing</span>
+                        <span>JS/C/C++</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/naranbhusal02" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/naranbhusal02" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://twitter.com/naranbhusal02" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+<a href="https://instagram.com/naranbhusal02" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+
+
+                    </div>
+                </div>
+            </div>
+           
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            &copy; 2024 Narayan Bhusal | Designed with <i class="fas fa-heart"></i> by <a href="https://naranbhusal02.me" class="link">Narayan Bhusal</a>
         </div>
-        <div id="weekly-report">
-            <h2>Weekly Report</h2>
-            <p>Total Activities: <span id="total-activities">0</span></p>
-            <p>Completed Activities: <span id="completed-activities">0</span></p>
-            <p>Completion Rate: <span id="completion-rate">0</span>%</p>
-        </div>
-    </div>
+    </footer>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
